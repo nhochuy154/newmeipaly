@@ -1,0 +1,639 @@
+/* css mặc định */
+/* reset css */
+* {
+  margin: 0;
+  padding: 0;
+  /* Reset cho phép chỉnh bên trong thẻ div */
+  box-sizing: border-box;
+
+  font-family: "Montserrat", serif;
+}
+
+html {
+  /* di chuyen tu thanh phan tren xuong duoi tu tu */
+  scroll-behavior: smooth;
+}
+
+/* header{ */
+/* vh (viewport height) 100vh full màn hình từ trên xuống dưới phù hợp máy */
+/* vw (viewport width) 100vw */
+/* height: 100vh;
+    background-color: black;
+    display: flex; */
+/* trục chính: trục ngang */
+/* trục phụ: trục dọc */
+/* justify-content: center; */
+/* justify-content: space-between;
+    align-items: center;
+    flex-direction: column-reverse; */
+/* } */
+
+/* .header-logo{
+    width: 150px;
+    height: 150px;
+    padding: 50px 75px;
+    border: 2px solid red;
+    box-sizing: border-box;
+}
+
+.header-navigation{
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+} */
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.header-content ul {
+  list-style: none;
+}
+.html-padding {
+  padding: 80px 0;
+}
+
+header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.214);
+  /* Kéo tới đâu đi đến đó */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+header .header-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+  align-items: center;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+header nav li {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 17px;
+  /* Viết In hoa chữ đầu capitalize; Viết chữ thường lowercase;*/
+  /* Viết In hoa */
+  text-transform: uppercase;
+}
+header nav a {
+  transition: all 0.5s;
+}
+header nav a:hover {
+  color: #e62b4a;
+}
+
+header .header-content-logo {
+  font-size: 32px;
+  font-weight: 700;
+}
+header nav .active a {
+  color: #e62b4a;
+}
+/* Hero banner */
+.hero-banner {
+  background-image: url(../img/home_slider.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+.hero-banner button {
+  border: none;
+  padding: 15px 30px;
+  background-color: #e62b4a;
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
+  transition: all 0.5s;
+  /* Con trỏ chuột */
+  cursor: pointer;
+  border-radius: 10px;
+}
+.hero-banner .sub-title {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.hero-banner h1 {
+  font-size: 75px;
+  /* Line-height = 75 + 8 */
+  line-height: 83px;
+  margin-bottom: 15px;
+}
+.hero-banner button:hover {
+  background-color: #af2239;
+}
+
+.hero-banner i {
+  animation-name: arrowGoDown;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-delay: 5s;
+}
+
+/* SERVICE */
+.service {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+.service .sub-title {
+  color: #e62b4a;
+  font-size: 14px;
+}
+.service h2 {
+  font-size: 50px;
+}
+.service .service-title p:last-of-type {
+  color: #888888;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.service .service-content .content-item {
+  background-color: white;
+  color: black;
+  height: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.service .service-content .content-item i {
+  font-size: 50px;
+}
+.service .service-content .content-item p {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.service .service-content .content-item-wrapper {
+  padding: 0 10px;
+}
+/* ================================= */
+.service .content-item {
+  position: relative;
+}
+.service .content-item::before {
+  content: "";
+  display: inline-block;
+  height: 0;
+  width: 5px;
+  background-color: #e62b4a;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.5s;
+}
+.service .content-item:hover::before {
+  height: 100%;
+}
+.service .slick-dots li button:before {
+  font-size: 15px;
+  color: white;
+}
+.service .slick-dots .slick-active button:before {
+  color: #e62b4a;
+}
+
+/* Blog */
+.blog {
+  background-color: white;
+  /* text-align: center; */
+}
+.blog .blog-title {
+  /* text-align: center; */
+  text-align: center;
+}
+.blog .sub-title {
+  color: #888888;
+  font-size: 14px;
+  font-weight: 400;
+}
+.blog h2 {
+  font-size: 50px;
+  font-weight: 400;
+}
+.blog .blog-title p:last-of-type {
+  font-size: 16px;
+  color: #888888;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.blog .blog-content {
+  display: grid;
+  /* Tao cot */
+  grid-template-columns: repeat(4, 1fr);
+  /* Khoang cach giua cot va dong */
+  gap: 30px;
+  width: 75%;
+  margin: 50px auto;
+}
+.blog .blog-content img {
+  width: 100%;
+  height: 100%;
+  /* filter */
+  filter: grayscale(50%) contrast(50%);
+  /* Giup can chinh hinh cho vua */
+  object-fit: cover;
+}
+.blog .blog-content .blog-content-item:first-of-type {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+.blog .blog-content .blog-content-item:last-of-type {
+  grid-column: 3 / span 2;
+  grid-row: 3 / span 2;
+}
+.blog .blog-content .blog-content-item {
+  position: relative;
+  overflow: hidden;
+}
+.blog .blog-content-item .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(230, 43, 74, 0.6);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 25px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.blog .blog-content-item:hover .overlay {
+  opacity: 1;
+}
+.blog .blog-content-item .overlay .overlay-icon {
+  text-align: right;
+  transform: translateY(20px);
+  transition: all 0.7s;
+}
+.blog .blog-content-item .overlay .overlay-text {
+  transform: translateY(20px);
+  transition: all 0.7s;
+}
+.blog .blog-content-item:hover .overlay-icon {
+  transform: translateY(0);
+}
+.blog .blog-content-item:hover .overlay-text {
+  transform: translateY(0);
+}
+.overlay-text p {
+  color: #d0c7c8;
+}
+.overlay-text h3 {
+  font-size: 18.72px;
+  font-weight: bold;
+  color: white;
+}
+.overlay .overlay-icon i {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  background-color: white;
+  color: black;
+  font-size: 14px;
+  margin-bottom: 10px;
+  transition: all 0.8s;
+}
+.overlay .overlay-icon:hover i {
+  background-color: black;
+  color: white;
+}
+
+/* NUMBER */
+/* .number {
+  background-color: black;
+  color: white;
+}
+.number .number-content {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+.number .number-item p:first-of-type {
+  font-size: 60px;
+  font-weight: 300;
+}
+.number .number-item p:last-of-type {
+  font-size: 20px;
+  color: #888888;
+} */
+
+.number {
+  background-color: black;
+  color: white;
+}
+.number .number-content {
+  display: flex;
+  width: 75%;
+  margin: 0 auto;
+}
+.number .number-content .number-item {
+  flex: 1;
+  text-align: center;
+}
+.number .number-content .number-item h3 {
+  font-size: 60px;
+  font-weight: 300;
+}
+.number .number-content .number-item p {
+  font-size: 20px;
+  color: #888888;
+}
+
+/* Digital */
+.digital {
+  background-image: url(../img/bussiness_img_1.jpg);
+  /* tranh lap lai */
+  background-repeat: no-repeat;
+  /* Phu the cha full */
+  background-size: cover;
+  /* giúp hình nền cố định vào trang web */
+  background-attachment: fixed;
+  text-align: center;
+}
+.digital .digital-content {
+  width: 75%;
+  margin: 30px auto 0;
+}
+.digital .digital-content video {
+  width: 100%;
+  /* zoom video cho vừa khung hình */
+  object-fit: cover;
+  border: none;
+  box-shadow: 0 2px 10px 1px rgb(0, 0, 0, 0.5);
+  outline: none;
+}
+
+.digital .sub-title {
+  color: #e62b4a;
+  font-size: 14px;
+  font-weight: 300;
+}
+.digital h2 {
+  color: white;
+  font-size: 50px;
+  font-weight: 400;
+}
+.digital .digital-title p:last-of-type {
+  font-size: 16px;
+  color: #888888;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+/* Contact */
+.contact .contact-title {
+  text-align: center;
+}
+.contact .contact-title h2 {
+  font-size: 50px;
+}
+.contact .contact-title p {
+  font-size: 16px;
+  color: #888888;
+  font-weight: 700;
+  margin-top: 20px;
+}
+.contact .contact-content {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  margin: 30px auto 0;
+}
+.contact .contact-map {
+  width: 60%;
+}
+.contact .contact-map iframe {
+  width: 100%;
+}
+.contact .contact-form {
+  width: 40%;
+}
+.contact .contact-form form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+}
+.contact .contact-form input,
+.contact .contact-form textarea {
+  font-size: 15px;
+  padding: 1em;
+  border: 1px solid #888888;
+  border-radius: 2px;
+  margin-bottom: 30px;
+}
+.contact .contact-form button {
+  padding: 15px 30px;
+  border: 1px solid black;
+  background-color: #000;
+  color: #ffffff;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.contact .contact-form button:hover {
+  background-color: #e62b4a;
+  border: 1px solid #e62b4a;
+}
+/* .contact .contact-content {
+  display: flex;
+}
+.contact .contact-map {
+  width: 60%;
+}
+.contact .contact-form {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contact .contact-form input,
+.contact .contact-form textarea {
+  padding: 15px;
+  margin-bottom: 30px;
+}
+.contact .contact-form textarea {
+  flex: 1;
+  resize: none;
+}
+.contact .contact-form button {
+  padding: 15px 15px;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+} */
+
+/* FOOTER */
+footer {
+  background: #000;
+}
+.footer-content {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 0;
+}
+.footer-content p {
+  font-size: 14px;
+  color: white;
+}
+.footer-content a {
+  display: inline-block;
+  width: 54px;
+  height: 54px;
+  line-height: 54px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: rgb(255, 255, 255, 0.2);
+  font-size: 16px;
+  margin-left: 5px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+.footer-content a:hover {
+  background-color: #e62b4a;
+}
+
+.back-to-top-button {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 4px;
+  text-align: center;
+  background-color: rgb(0, 0, 0, 0.25);
+  font-weight: bold;
+  color: white;
+  /* di chuyển theo khi người dùng scroll web */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 20px;
+  /*  back to top ẩn hiện khi scroll */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.cd-top--is-visible {
+  /*  back to top ẩn hiện khi scroll */
+  visibility: visible;
+  opacity: 1;
+}
+
+@keyframes arrowGoDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+
+/* before và after */
+.demo-before-after {
+  background-color: pink;
+  height: 60vh;
+}
+.demo-before-after::before {
+  content: "";
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  background-color: red;
+}
+.demo-before-after::after {
+  content: "Đi học";
+}
+/* ========================== */
+.bg {
+  background-color: rgb(36, 170, 211);
+}
+.bg .bg-content {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+.bg .bg-content .bg-content1 {
+  width: 50%;
+  margin-right: 15px;
+}
+.bg .bg-content .bg-content1 img {
+  width: 100%;
+  height: 100%;
+}
+.bg .bg-content .bg-content2 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+.bg .bg-content .bg-content2 .ng-con img {
+  width: 100%;
+  height: 100%;
+}
+.ng-con {
+  width: 50%;
+  padding: 0px 15px;
+}
+.ng-con:nth-of-type(1) {
+  padding-bottom: 15px;
+}
+.ng-con:nth-of-type(2) {
+  padding-bottom: 15px;
+}
+.ng-con:nth-of-type(3) {
+  padding-top: 15px;
+}
+.ng-con:nth-of-type(4) {
+  padding-top: 15px;
+}
+/* .demo-position{
+    background-color: black;
+    height: 100vh;
+    position: relative;
+} */
+
+/* .demo1{
+    width: 150px;
+    height: 150px;
+    background-color: red; */
+/* position: static; mặc định của html */
+/* position: absolute;
+    z-index: 999; */
+/* position: relative; top - bottom - left - right */
+/* left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+} */
+/* .demo2{
+    width: 200px;
+    height: 200px;
+    background-color: blue; */
+/* transform: translateX(100px);
+    position: relative;
+    z-index: 3; */
+
+/* } */
